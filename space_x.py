@@ -16,6 +16,6 @@ if mission.status_code != 200:
 print('Serial ID    Status  Launch Date')
 print('------------------------------------------------')
 for capsule in mission.json():
-    if capsule['capsule_id'] == 'dragon1':
+    if 'dragon1' in capsule['capsule_id']:
         print('{} {} {} {}'.format(capsule['capsule_serial'], capsule['capsule_id'], capsule['status'], capsule['original_launch']))
 

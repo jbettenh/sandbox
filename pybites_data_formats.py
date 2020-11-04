@@ -26,10 +26,19 @@ def most_prolific_automaker(year):
 
     return most_new_cars
 
+
 def get_models(automaker, year):
     """Filter cars 'data' by 'automaker' and 'year',
        return a set of models (a 'set' to avoid duplicate models)"""
-    pass
+    unique_models = set()
+
+    for model in data:
+        if model['automaker'] == automaker and model['year'] == year:
+            unique_models.add(model['model'])
+
+    return unique_models
 
 
 print(most_prolific_automaker(1999))
+
+print(get_models('Dodge', 1999))
